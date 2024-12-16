@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+     <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About </a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="reservation.html">Reservations</a></li>
+                    <li><a href="pharmacy.html">Pharmacy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Review Your Order</h1>
+        <div id="order-summary">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items"></tbody>
+            </table>
+            <div id="order-total">
+                <strong>Total: $<span id="total-price">0.00</span></strong>
+            </div>
+        </div>
+
+        <h2>Enter Your Details</h2>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <h3>Delivery Details</h3>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Enter your city" required>
+            </div>
+            <div class="form-group">
+                <label for="street">Street Number</label>
+                <input type="text" id="street" placeholder="Enter your street number" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <h3>Payment Information</h3>
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="Enter your card number" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="text" id="expiry-date" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="Enter CVV" required>
+            </div>
+
+            <button type="submit" id="pay-button">Pay</button>
+        </form>
+
+        <div id="confirmation-message" style="display:none;">
+            <h3>Thank you for your purchase!</h3>
+            <p>Your order will be delivered by <span id="delivery-date"></span>.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+          <a href="#">Contacts</a>
+          <a href="#">FAQ</a>
+          <a href="#">News</a>
+          <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+          <a href="#"><img src="images/yt-removebg-preview.png" alt="YouTube"></a>
+          <a href="#"><img src="images/ig-removebg-preview.png" alt="Instagram"></a>
+          <span>&copy; Reserved</span>
+        </div>
+    </footer>
+
+    <script src="payment.js"></script>
+</body>
+</html>

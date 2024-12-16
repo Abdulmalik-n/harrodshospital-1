@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harrods Hospital  - Book an Appointment</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <!-- Header -->
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About </a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="reservation.html">Reservations</a></li>
+                    <li><a href="pharmacy.html">Pharmacy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="appointment-form">
+            <h1>Book an Appointment</h1>
+            <form action="#" method="post">
+                <!-- Full Name -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <!-- Date of Birth -->
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <!-- Appointment Date -->
+                <label for="appointment-date">Appointment Date:</label>
+                <input type="date" id="appointment-date" name="appointment-date" required>
+
+                <!-- Contact Information -->
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required>
+
+                <!-- Email -->
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Time Slot -->
+                <label for="time-slot">Preferred Time Slot:</label>
+                <select id="time-slot" name="time-slot" required>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                </select>
+
+                <!-- Submit Button -->
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+          <a href="#">Contacts</a>
+          <a href="#">FAQ</a>
+          <a href="#">News</a>
+          <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+          <a href="#"><img src="images/yt-removebg-preview.png" alt="YouTube"></a>
+          <a href="#"><img src="images/ig-removebg-preview.png" alt="Instagram"></a>
+          <span>&copy; Reserved</span>
+        </div>
+      </footer>
+</body>
+</html>

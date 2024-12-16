@@ -1,0 +1,265 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* Header */
+header {
+    background-color: #55bdee;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+
+}
+
+header .logo img {
+    width: 100px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding-left: 60px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Section */
+main {
+    margin: 20px 0;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    margin-bottom: 10px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/* Image Grid */
+.image-grid {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.image-grid .grid-item {
+    width: 32%;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+}
+
+/* Table Container */
+.table-container {
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures that the table adjusts to the container */
+}
+
+tbody td {
+    padding: 15px;
+    color: #f5eeee;
+    font-weight: bold;
+    word-wrap: break-word; /* Allows long text to wrap and not overflow */
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: #194c90;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #4f6ea3;
+}
+
+/* Adjust the map row */
+.map-row iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    margin-top: 10px;
+}
+
+/* Table Footer */
+.table-footer {
+    padding: 20px;
+    background-color: #1d2b50;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #55bdee;
+    padding: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-container a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-container img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-container span {
+    color: white;
+    margin-left: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Adjust the container layout */
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Header */
+    .container nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .text-content h1 {
+        font-size: 20px;
+    }
+
+    .text-content p {
+        font-size: 16px;
+    }
+
+    .image-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .image-grid .grid-item {
+        width: 100%;
+    }
+
+    .table-container {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .map-row iframe {
+        height: 150px; /* Reduce the map size on smaller screens */
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Additional adjustments for small screens */
+    body {
+        font-size: 14px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    .text-content h1 {
+        font-size: 18px;
+    }
+
+    .text-content p {
+        font-size: 14px;
+    }
+
+    .image-grid {
+        margin: 10px 0;
+    }
+
+    .table-container {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    tbody td {
+        padding: 10px;
+    }
+
+    .map-row iframe {
+        height: 120px;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .footer-container img {
+        width: 25px;
+    }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy - Dynamic Items</title>
+    <link rel="stylesheet" href="pharmacy.css">
+    <script src="pharmacy.js" defer></script>
+</head>
+
+
+
+<script>
+
+// Cart data
+let cart = [];
+
+// Load medicines into the UI
+function loadMedicines() {
+    const container = document.getElementById("medicine-container");
+    medicines.forEach(medicine => {
+        const medicineDiv = document.createElement("div");
+        medicineDiv.classList.add("medicine");
+        medicineDiv.innerHTML = `
+            <h3>${medicine.name}</h3>
+            <p>Price: $${medicine.price}</p>
+            <button onclick="addToCart(${medicine.id})">Add to Cart</button>
+        `;
+        container.appendChild(medicineDiv);
+    });
+}
+
+// Add item to cart
+function addToCart(id) {
+    const medicine = medicines.find(med => med.id === id);
+    const existingItem = cart.find(item => item.id === id);
+
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({ ...medicine, quantity: 1 });
+    }
+
+    updateCartUI();
+}
+
+// Update cart UI
+function updateCartUI() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    cartItems.innerHTML = "";
+
+    let total = 0;
+    cart.forEach(item => {
+        const row = document.createElement("tr");
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>$${item.price}</td>
+            <td>${item.quantity}</td>
+            <td>$${itemTotal.toFixed(2)}</td>
+        `;
+        cartItems.appendChild(row);
+    });
+
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+// Clear the cart
+function clearCart() {
+    cart = [];
+    updateCartUI();
+}
+
+// Save favorites to localStorage
+function saveFavorites() {
+    localStorage.setItem("favorites", JSON.stringify(cart));
+    alert("Favorites saved!");
+}
+
+// Load favorites from localStorage
+function loadFavorites() {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    cart = favorites;
+    updateCartUI();
+}
+
+// Save cart to localStorage and navigate to payment page
+function proceedToPayment() {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+    window.location.href = "payment.html";
+}
+
+// Add event listeners
+document.addEventListener("DOMContentLoaded", () => {
+    loadMedicines();
+
+    // Button actions
+    document.getElementById("clear-cart").addEventListener("click", clearCart);
+    document.getElementById("save-favorites").addEventListener("click", saveFavorites);
+    document.getElementById("load-favorites").addEventListener("click", loadFavorites);
+    document.getElementById("buy-now-btn").addEventListener("click", proceedToPayment);
+});
+</script>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About </a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="reservation.html">Reservations</a></li>
+                    <li><a href="pharmacy.html">Pharmacy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Order Medicines</h1>
+        <div id="medicine-container"></div>
+
+        <section id="cart">
+            <h2>Your Cart</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+            <p id="cart-total">Total: $0</p>
+
+            <!-- Buttons inside the cart box -->
+            <div class="cart-buttons">
+                <button id="clear-cart" class="clear-cart-btn">Clear Cart</button>
+                <button id="save-favorites" class="favorites-btn">Save as Favorites</button>
+                <button id="load-favorites" class="favorites-btn">Load Favorites</button>
+            </div>
+        </section>
+
+        <section id="buy-now">
+            <a href="payment.html">
+                <button id="buy-now-btn">Buy Now</button>
+            </a>
+            
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+          <a href="#">Contacts</a>
+          <a href="#">FAQ</a>
+          <a href="#">News</a>
+          <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+          <a href="#"><img src="images/yt-removebg-preview.png" alt="YouTube"></a>
+          <a href="#"><img src="images/ig-removebg-preview.png" alt="Instagram"></a>
+          <span>&copy; Reserved</span>
+        </div>
+      </footer>
+</body>
+</html>

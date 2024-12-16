@@ -1,0 +1,295 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Header */
+.container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* Header */
+header {
+    background-color: #55bdee;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+header .logo img {
+    width: 100px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding-left: 60px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.icons img {
+    width: 25px;
+    margin-left: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main h1 {
+    text-align: center;
+    color: #55bdee;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    background-color: #55bdee;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4aa0d3;
+}
+
+/* Order Table */
+#order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#order-summary th,
+#order-summary td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#order-summary th {
+    background-color: #55bdee;
+    color: white;
+}
+
+#order-summary tr:nth-child(even) {
+    background-color: #e1f7fd; /* Light Blue for even rows */
+}
+
+#order-summary tr:nth-child(odd) {
+    background-color: #b6e0f0; /* Blue for odd rows */
+}
+
+/* Total Row */
+#order-total {
+    font-size: 18px;
+    text-align: right;
+    margin-top: 20px;
+}
+
+#order-total strong {
+    font-size: 20px;
+    color: black;
+}
+
+/* Confirmation Message */
+#confirmation-message {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #55bdee;
+    padding: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-container a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-container img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-container span {
+    color: white;
+    margin-left: 20px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Container adjustments */
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Header */
+    nav ul {
+        padding-left: 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    form {
+        padding: 0 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    #order-summary th,
+    #order-summary td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #order-total {
+        font-size: 16px;
+    }
+
+    #order-total strong {
+        font-size: 18px;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    main h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-group input {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    #order-summary th,
+    #order-summary td {
+        font-size: 12px;
+    }
+
+    footer .footer-container {
+        text-align: center;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    footer img {
+        width: 20px;
+    }
+}

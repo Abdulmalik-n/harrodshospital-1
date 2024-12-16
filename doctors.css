@@ -1,0 +1,223 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* Header */
+header {
+    background-color: #55bdee;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+header .logo img {
+    width: 100px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding-left: 60px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Social Icons */
+.icons img {
+    width: 25px;
+    margin-left: 20px;
+}
+
+/* Doctor Listing */
+.doctor-listing {
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.doctor-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    background-color: #BEE2E2;
+    border-radius: 12px;
+}
+
+.doctor-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding-right: 15px;
+}
+
+.doctor-info p {
+    font-size: 1em;
+    line-height: 5px;
+    margin-left: 5px;
+    padding-right: 40px;
+}
+
+.booking-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.booking-button a:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #55bdee;
+    padding: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-container a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-container img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-container span {
+    color: white;
+    margin-left: 20px;
+}
+
+/* Mobile Responsive Header */
+@media (max-width: 768px) {
+    /* Header */
+   .container {
+    flex-direction: column;
+    align-items: flex-start;
+    }
+
+    .container nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    /* Doctor Listing Layout */
+    .doctor-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        align-items: center ;
+        height: auto;
+    }
+
+    .doctor-item img {
+        width: 90%;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+
+    .doctor-info h2 {
+        font-size: 16px;
+        margin-bottom: 2px;
+        padding-left: 8px;
+    }
+
+    .doctor-info p {
+        font-size: 14px;
+        padding-bottom: 20px;
+        letter-spacing: normal;
+        line-height: 1.5
+        }
+
+    .booking-button a {
+        width: 80px;
+        text-align: center;
+    }
+
+    /* Footer adjustments */
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Additional adjustments for small screens */
+    body {
+        font-size: 14px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    /* Doctor Listing Layout */
+    .doctor-item {
+        padding: 10px;
+    }
+
+    .doctor-info h2 {
+        font-size: 1.1em;
+    }
+
+    .doctor-info p {
+        font-size: 0.8em;
+    }
+
+    .booking-button a {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    /* Footer Styles */
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .footer-container img {
+        width: 25px;
+    }
+}
